@@ -14,8 +14,8 @@ order starts from a clean audit instead of a scramble.
   never under `api/`.
 - Images: embedded hotlinks to the official stores' CDN
   (the fleet embed model), so image hosting cost is zero
-  and provenance stays with the source. 19 of 39 drops are
-  pictured; the rest carry designed absence plates.
+  and provenance stays with the source. 21 of 39 drops are
+  pictured (r37 growth); the rest carry designed absence plates.
 - Search and filters: client side, over the local JSON.
 - Third party calls at runtime: none, apart from the image
   embeds and outbound links a reader chooses to follow.
