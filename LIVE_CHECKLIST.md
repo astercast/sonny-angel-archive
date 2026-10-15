@@ -1,8 +1,17 @@
 # LIVE CHECKLIST, Sonny Angel USA Archive
 
-Standing state: WORKING TRACK ONLY. Not deployed, no Vercel
-project, no `-live` repo. This file exists so a future live
-order starts from a clean audit instead of a scramble.
+Standing state: LIVE SNAPSHOT EXECUTED 2026-10-15 at
+Rotation 47 close, under the user's standing order. The
+`-live` repo astercast/sonny-angel-archive-live carries the
+verified snapshot of this working repo at 1bc73b6 (remote
+main f6e223c97a2f003849e05d4e6f4417ea513be0a0, remote tree
+verified equal to the snapshot tree, 53 of 53 files
+SHA-equal; record: fleet-ops ROTATION-47-REPORT.md). This
+working repo remains the build track. The `-live` repo is
+updated ONLY on a new explicit user push order; the R47
+authorization does not renew. No Vercel project exists yet:
+connecting the `-live` repo in Vercel (Standard build
+machine, never Turbo) is the user's hand-step.
 
 ## Free tier audit (at build, 2026-10-14)
 
@@ -23,7 +32,7 @@ order starts from a clean audit instead of a scramble.
 - Third party calls at runtime: none, apart from the image
   embeds and outbound links a reader chooses to follow.
 
-## If a live order ever lands
+## For any future live update (a new user order is required)
 
 1. Verify the remote URL matches the intended `-live`
    track before any push.

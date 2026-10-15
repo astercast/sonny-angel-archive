@@ -1,7 +1,11 @@
 # Sonny Angel USA Archive (Site 11)
 
-Working repo only. Never deployed. A `-live` copy is made
-only on the user's explicit push order, and none exists.
+Went live 2026-10-15. The `-live` copy
+(astercast/sonny-angel-archive-live) carries the verified
+snapshot of this repo at 1bc73b6, pushed at Rotation 47
+close under the user's standing order. This working repo
+stays the build track; the `-live` copy is updated only
+on a new explicit user push order.
 
 The complete Sonny Angel USA release chronology in one
 chronological river, with lineups, secret figures, outbound
