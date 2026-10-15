@@ -77,6 +77,7 @@ h1{font-family:"Arial Rounded MT Bold","Hiragino Maru Gothic ProN",
 .dropbody{min-width:0}
 .dropdate{font-size:13px;letter-spacing:.12em;text-transform:uppercase;
   color:var(--accent);font-weight:700;margin:0 0 4px}
+.dropdate .region{color:var(--muted)}
 .dropname{font-family:"Arial Rounded MT Bold","Hiragino Maru Gothic ProN",
   -apple-system,"Segoe UI",sans-serif;font-size:26px;
   font-weight:700;margin:0 0 6px;line-height:1.25}
@@ -147,3 +148,6 @@ footer p{font-size:13.5px;color:var(--muted);max-width:680px}
   .dropname{font-size:21px}
   footer{padding:22px 16px 32px}
 }
+
+.tl-year{font-size:24px;line-height:1.2;padding-top:38px}
+@media (max-width:640px){.tl-year{padding-top:28px}}

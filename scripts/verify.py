@@ -14,8 +14,8 @@ from pathlib import Path
 root = Path(__file__).resolve().parent.parent
 fail = []
 
-pages = ["index.html", "guide.html", "watchlist.html", "404.html",
-         "assets/style.css", "assets/app.js", "assets/watchlist.js"]
+pages = ["index.html", "guide.html", "watchlist.html", "404.html", "timeline.html",
+         "assets/style.css", "assets/app.js", "assets/watchlist.js", "assets/timeline.js"]
 for p in pages:
     t = (root / p).read_text(encoding="utf-8")
     if "\u2014" in t or "\u2013" in t:
@@ -75,6 +75,33 @@ print(f"watchlist_verified={len(w['retailers'])} not_listed={len(w['checked_not_
 
 if fail:
     print("VERIFY FAILED:")
+    [print(" -", f) for f in fail]
+    sys.exit(1)
+_early_ok = True
+
+h = json.loads((root / "data/v1/history.json").read_text())
+entries = h["entries"]
+if len(entries) != h["meta"]["entries"]:
+    fail.append("history meta.entries does not match entry count")
+names = [x["name"] for x in entries]
+if len(set(names)) != len(names):
+    fail.append("duplicate history entry names")
+years = [x["year"] for x in entries if x["year"] is not None]
+if years != sorted(years):
+    fail.append("history entries are not in year order")
+for x in entries:
+    if not x.get("source"):
+        fail.append(f"history {x['name']}: missing source provenance")
+    if x.get("evidence") not in ("A", "B", "C"):
+        fail.append(f"history {x['name']}: evidence level missing")
+    for field in ("name", "scope", "display"):
+        value = str(x.get(field, ""))
+        if any(pattern.search(value) for pattern in CARD_MONEY_PATTERNS):
+            fail.append(f"history {x['name']}: price or resale figure in {field}")
+print(f"history_entries={len(entries)}")
+
+if fail:
+    print("VERIFY FAILED (history):")
     [print(" -", f) for f in fail]
     sys.exit(1)
 print("VERIFY OK")
