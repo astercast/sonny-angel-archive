@@ -98,6 +98,22 @@ for x in entries:
         value = str(x.get(field, ""))
         if any(pattern.search(value) for pattern in CARD_MONEY_PATTERNS):
             fail.append(f"history {x['name']}: price or resale figure in {field}")
+    if x.get("image"):
+        if not x.get("image_source"):
+            fail.append(f"history {x['name']}: image without image_source")
+        img = x["image"]
+        if img.startswith("http"):
+            fail.append(f"history {x['name']}: image is a hotlink, must be self hosted")
+        else:
+            ip = root / img
+            if not ip.exists():
+                fail.append(f"history {x['name']}: image file missing: {img}")
+            else:
+                head = ip.read_bytes()[:8]
+                if not (head[:3] == b"\xff\xd8\xff" or head[:8] == b"\x89PNG\r\n\x1a\n"):
+                    fail.append(f"history {x['name']}: image file is not a JPEG or PNG: {img}")
+    if "\u2014" in str(x.get("image_source", "")):
+        fail.append(f"history {x['name']}: em dash in image_source")
 print(f"history_entries={len(entries)}")
 
 if fail:

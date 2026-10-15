@@ -2,7 +2,7 @@
  "meta": {
   "title": "Sonny Angel Full Timeline",
   "built": "2026-10-15",
-  "entries": 99,
+  "entries": 129,
   "counting_rule": "An entry stands only when a source consulted at build time verifies the series exists. Evidence A is an official Sonny Angel or Dreams source, B is an established collector or retailer reference that gives a year, C is an official list where the year is grouped or approximate and is labelled as such. Entries with no year in the source are shown as Year not stated, never guessed.",
   "scale_note": "Dreams and its stores describe the brand at very different counts over time, from more than 500 varieties on the USA store to more than 650 kinds on the global site and more than 1,300 variations in newer brand copy. Those are the brand's own claims about individual figures, not a count of series, and this timeline counts series and release lines only.",
   "sources_consulted": [
@@ -33,7 +33,9 @@
    "line": "Regular",
    "scope": "12 animal figures. The first mini figure series.",
    "evidence": "A",
-   "source": "Wikipedia, Sonny Angel, citing Dreams, fetched 2026-10-15 ; Official Sonny Angel site, Mini Figure Regular products list, fetched 2026-10-15"
+   "source": "Wikipedia, Sonny Angel, citing Dreams, fetched 2026-10-15 ; Official Sonny Angel site, Mini Figure Regular products list, fetched 2026-10-15",
+   "image": "assets/img/animal-1.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2005,
@@ -42,7 +44,18 @@
    "line": "Regular",
    "scope": "12 animal figures, second wave. Year shown as era in the main archive.",
    "evidence": "C",
-   "source": "Official USA store regular page, via the main archive record"
+   "source": "Official USA store regular page, via the main archive record",
+   "image": "assets/img/animal-2.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2005,
+   "display": "2005",
+   "name": "T-Shirt Series",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Figures wearing printed T-shirts, an early variation line beyond headgear.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
   },
   {
    "year": 2006,
@@ -54,13 +67,91 @@
    "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
   },
   {
+   "year": 2006,
+   "display": "2006",
+   "name": "Fruit Series",
+   "line": "Regular",
+   "evidence": "B",
+   "scope": "Fruit headgear, from apple and grapes to melon and persimmon. One of the first regular series.",
+   "source": "Coleka collector database (figures dated 2006), fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post on the 2019 refine, fetched 2026-10-15",
+   "image": "assets/img/fruit.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2006,
+   "display": "2006",
+   "name": "Christmas Series 2006",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A small Christmas set with Santa season designs, the start of the annual Christmas tradition.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
    "year": 2007,
    "display": "2007",
    "name": "Animal Series Ver. 3",
    "line": "Regular",
    "scope": "12 animal figures, third wave. Year shown as era in the main archive.",
    "evidence": "C",
-   "source": "Official USA store regular page, via the main archive record"
+   "source": "Official USA store regular page, via the main archive record",
+   "image": "assets/img/animal-3.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2007,
+   "display": "2007",
+   "name": "Crown Series",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Figures wearing crowns, sold as a limited series alongside the regular lines.",
+   "source": "Coleka collector database, fetched 2026-10-15 ; Kidr retailer listing, fetched 2026-10-15"
+  },
+  {
+   "year": 2007,
+   "display": "2007",
+   "name": "Vegetable Series",
+   "line": "Regular",
+   "evidence": "B",
+   "scope": "Vegetable headgear, from cabbage and carrot to Japanese radish. One of the first regular series.",
+   "source": "Coleka collector database (figures dated 2007), fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post on the 2019 refine, fetched 2026-10-15",
+   "image": "assets/img/vegetable.jpg",
+   "image_source": "Official global store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelstore.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2007,
+   "display": "2007",
+   "name": "Halloween Series 2007",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Halloween costumes, the earliest dated Halloween series found.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2007,
+   "display": "2007",
+   "name": "Christmas Series 2007",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Christmas set with Santa and seasonal figures.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2007,
+   "display": "2007",
+   "name": "Special Color Series 2007",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Recoloured variants of existing figures sold as a special colour set.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2008,
+   "display": "2008",
+   "name": "Christmas Series 2008",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Christmas set including Santa and snowman designs.",
+   "source": "Coleka collector database, Christmas 2008 figure pages, fetched 2026-10-15"
   },
   {
    "year": 2009,
@@ -69,16 +160,121 @@
    "line": "Regular",
    "scope": "12 animal figures, fourth wave. Year shown as era in the main archive.",
    "evidence": "C",
-   "source": "Official USA store regular page, via the main archive record"
+   "source": "Official USA store regular page, via the main archive record",
+   "image": "assets/img/animal-4.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
-   "year": 2014,
-   "display": "2014",
-   "name": "Laduree Patisserie Collection",
-   "line": "Limited",
-   "scope": "12 pastry figures plus a secret. A French patisserie collaboration, released July 15, 2014.",
+   "year": 2009,
+   "display": "2009",
+   "name": "Marine Series",
+   "line": "Regular",
    "evidence": "B",
-   "source": "Coleka collector database, fetched 2026-10-15 ; Trampt series page, fetched 2026-10-15"
+   "scope": "Sea creature headgear, from seals and penguins to sharks. One of the first regular series.",
+   "source": "Coleka collector database, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post on the 2019 refine, fetched 2026-10-15",
+   "image": "assets/img/marine.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2009,
+   "display": "2009",
+   "name": "Valentine's Day Series 2009",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Valentine's set with love themed figures, the earliest dated Valentine's series found.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2009,
+   "display": "2009",
+   "name": "Christmas Series 2009",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A small Christmas set with Santa type figures.",
+   "source": "Coleka collector database, Christmas 2009 figure pages, fetched 2026-10-15"
+  },
+  {
+   "year": 2010,
+   "display": "2010",
+   "name": "Christmas Series 2010",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A small Christmas set including reindeer designs.",
+   "source": "Coleka collector database, Christmas 2010 figure pages, fetched 2026-10-15"
+  },
+  {
+   "year": 2011,
+   "display": "2011",
+   "name": "Christmas Series 2011",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Christmas set with Santa and snowman figures.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2012,
+   "display": "2012",
+   "name": "Easter Series 2012",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "An Easter set with egg, spring and chocolate rabbit designs.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2012,
+   "display": "2012",
+   "name": "Halloween Series 2012",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Halloween costumes for the 2012 season.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2012,
+   "display": "2012",
+   "name": "Christmas Series 2012",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Christmas set with seasonal figures.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2013,
+   "display": "2013",
+   "name": "Flower Series",
+   "line": "Regular",
+   "evidence": "B",
+   "scope": "Flower headgear, from tulips and roses to cherry blossom and cactus blooms. One of the classic regular series.",
+   "source": "Coleka collector database (figures dated 2013), fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post on the 2019 refine, fetched 2026-10-15",
+   "image": "assets/img/flower.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2013,
+   "display": "2013",
+   "name": "Valentine's Day Series 2013",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Valentine's release for the 2013 season.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2013,
+   "display": "2013",
+   "name": "Halloween Series 2013",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Halloween costumes for the 2013 season.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
+  },
+  {
+   "year": 2013,
+   "display": "2013",
+   "name": "Christmas Series 2013",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Christmas set for the 2013 season.",
+   "source": "Coleka collector database, Sonny Angel series index, fetched 2026-10-15"
   },
   {
    "year": 2014,
@@ -90,13 +286,40 @@
    "source": "Coleka collector database, fetched 2026-10-15 ; Official Sonny Angel site, Artist Collection products list (search index), fetched 2026-10-15"
   },
   {
+   "year": 2014,
+   "display": "2014",
+   "name": "Halloween Series 2014",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "Halloween costumes for the 2014 season.",
+   "source": "Coleka collector database, fetched 2026-10-15 ; Kinokuniya USA product listing, fetched 2026-10-15"
+  },
+  {
+   "year": 2014,
+   "display": "2014",
+   "name": "Christmas Series 2014",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A Christmas set for the 2014 season.",
+   "source": "Coleka collector database, fetched 2026-10-15 ; Kinokuniya USA product listing, fetched 2026-10-15"
+  },
+  {
    "year": 2015,
-   "display": "2015",
+   "display": "September 8, 2015",
+   "name": "Laduree Patisserie Collection",
+   "line": "Limited",
+   "scope": "12 pastry figures plus a secret. A French patisserie collaboration, released July 15, 2014.",
+   "evidence": "A",
+   "source": "Official Sonny Angel site, Dreams news post, September 8, 2015 ; Coleka collector database, Laduree pages"
+  },
+  {
+   "year": 2015,
+   "display": "November 13, 2015",
    "name": "Christmas Series 2015",
    "line": "Limited",
    "scope": "4 figures plus 1 secret.",
-   "evidence": "B",
-   "source": "Kawaii Panda retailer page, fetched 2026-10-15"
+   "evidence": "A",
+   "source": "Kawaii Panda retailer page, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, November 13, 2015"
   },
   {
    "year": 2015,
@@ -195,7 +418,9 @@
    "line": "Gift",
    "scope": "6 cake figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Gift products list (search index), fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Gift products list (search index), fetched 2026-10-15",
+   "image": "assets/img/birthday-gift.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2017,
@@ -231,7 +456,9 @@
    "line": "Regular",
    "scope": "12 sweet figures. Announced August 2017, released September 14, 2017.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Dreams news post, fetched 2026-10-15 ; Official Sonny Angel site, Mini Figure Regular products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Dreams news post, fetched 2026-10-15 ; Official Sonny Angel site, Mini Figure Regular products list, fetched 2026-10-15",
+   "image": "assets/img/sweets.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2017,
@@ -307,7 +534,7 @@
   },
   {
    "year": 2019,
-   "display": "2019",
+   "display": "January 25, 2019",
    "name": "Valentine's Day Series 2019",
    "line": "Limited",
    "scope": "4 chocolate figures.",
@@ -334,12 +561,12 @@
   },
   {
    "year": 2019,
-   "display": "2019",
+   "display": "June 24, 2019",
    "name": "Circus Series, first run",
    "line": "Limited",
    "scope": "6 circus figures.",
-   "evidence": "C",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "evidence": "B",
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Coleka collector database, Circus Series release date"
   },
   {
    "year": 2019,
@@ -415,7 +642,7 @@
   },
   {
    "year": 2020,
-   "display": "2020",
+   "display": "June 25, 2020",
    "name": "Sonny Angel in Space Adventure Series 2020",
    "line": "Limited",
    "scope": "6 space figures.",
@@ -442,7 +669,7 @@
   },
   {
    "year": 2021,
-   "display": "2021",
+   "display": "January 1, 2021",
    "name": "Japanese Good Luck Series 2021",
    "line": "Limited",
    "scope": "6 good luck figures.",
@@ -510,25 +737,29 @@
    "line": "Gift",
    "scope": "6 bear figures with balloons, presents and cake.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Gift products list (search index), fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Gift products list (search index), fetched 2026-10-15",
+   "image": "assets/img/birthday-gift-bear.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2021,
-   "display": "2021",
+   "display": "October 14, 2021",
    "name": "HIPPERS, first run",
    "line": "HIPPERS",
    "scope": "12 animal figures. The first HIPPERS, a decorating figure that sits on edges.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15",
+   "image": "assets/img/hippers-animal.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2021,
    "display": "2021",
    "name": "Artist Collection, 2021 wave",
    "line": "Artist",
-   "scope": "Two pairs: A Garden in My Heart and Angel in the Bird Garden.",
+   "scope": "Two pairs: A Garden in My Heart and Angel in the Bird Garden, the second made with ANNA SUI ACTIVE and released January 22, 2021.",
    "evidence": "B",
-   "source": "Coleka collector database, fetched 2026-10-15 ; Official Sonny Angel site, Artist Collection products list (search index), fetched 2026-10-15"
+   "source": "Coleka collector database, fetched 2026-10-15 ; Official Sonny Angel site, Artist Collection products list (search index), fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, January 13, 2021"
   },
   {
    "year": 2022,
@@ -560,11 +791,13 @@
   {
    "year": 2022,
    "display": "2022",
-   "name": "Creatures Series 2022",
+   "name": "Creature Series 2022",
    "line": "Limited",
    "scope": "12 creature figures. A collaboration with Donna Wilson.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, fetched 2026-10-15",
+   "image": "assets/img/creature-donna-wilson.jpg",
+   "image_source": "Official Dreams Creatures series page photo, self-hosted in this repo. Source: sonnyangel.com/en/creatures-series/, downloaded 2026-10-15."
   },
   {
    "year": 2022,
@@ -586,7 +819,7 @@
   },
   {
    "year": 2022,
-   "display": "2022",
+   "display": "January 13, 2022",
    "name": "Sonny Angel Enjoy the Moment 2022",
    "line": "Limited",
    "scope": "6 slow moment figures.",
@@ -595,30 +828,34 @@
   },
   {
    "year": 2022,
-   "display": "2022",
+   "display": "October 6, 2022",
    "name": "Sonny Angel Hello Jeju 2022",
    "line": "Limited",
-   "scope": "6 Jeju figures.",
+   "scope": "6 Jeju figures. A regional exclusive for Jeju Island, South Korea: tangerine, horse, Halla Mountain, canola flower and chocolate pig designs.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, September 26, 2022"
   },
   {
    "year": 2022,
-   "display": "2022",
+   "display": "October 2022",
    "name": "HIPPERS Harvest Series",
    "line": "HIPPERS",
    "scope": "12 harvest figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15",
+   "image": "assets/img/hippers-harvest.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2022,
-   "display": "2022",
+   "display": "November 15, 2022",
    "name": "HIPPERS Dreaming Series",
    "line": "HIPPERS",
    "scope": "12 sleepy animal figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15",
+   "image": "assets/img/hippers-dreaming.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2022,
@@ -648,6 +885,15 @@
    "source": "Coleka collector database, fetched 2026-10-15 ; Official Sonny Angel site, Artist Collection products list (search index), fetched 2026-10-15"
   },
   {
+   "year": 2022,
+   "display": "March 30, 2022",
+   "name": "Cactus Series 2022",
+   "line": "Limited",
+   "evidence": "A",
+   "scope": "Cactus and succulent designs, a small set of six plus secrets. A later, separate release from the 2020 cactus set.",
+   "source": "Official Sonny Angel site, Dreams news post, March 30, 2022, fetched 2026-10-15"
+  },
+  {
    "year": 2023,
    "display": "2023",
    "name": "Afternoon Tea 2023",
@@ -658,30 +904,36 @@
   },
   {
    "year": 2023,
-   "display": "2023",
+   "display": "May 28, 2023",
    "name": "Cat Life Series 2023",
    "line": "Limited",
    "scope": "9 cat figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/cat-life.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/?p=18288 (Cat Life announcement), downloaded 2026-10-15."
   },
   {
    "year": 2023,
-   "display": "2023",
+   "display": "March 9, 2023",
    "name": "Flower Gift 2023",
    "line": "Gift",
    "scope": "6 lion gift figures in flower colours.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Gift products list (search index), fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Gift products list (search index), fetched 2026-10-15",
+   "image": "assets/img/flower-gift.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2023,
-   "display": "2023",
+   "display": "November 2023",
    "name": "Winter Wonderland Series 2023",
    "line": "Limited",
    "scope": "6 winter figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/winter-wonderland.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2023/10/17/winter-wonderland/, downloaded 2026-10-15."
   },
   {
    "year": 2023,
@@ -694,111 +946,175 @@
   },
   {
    "year": 2023,
-   "display": "2023",
+   "display": "December 14, 2023",
    "name": "Charm Candy Store 2023",
    "line": "Limited",
    "scope": "5 candy charm figures. A mini figure charm, not a standard blind box.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/candy-store-charm.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2023/12/05/charm-candy-store/, downloaded 2026-10-15."
   },
   {
    "year": 2024,
-   "display": "2024",
+   "display": "January 9, 2024",
    "name": "Gifts of Love Series 2024",
    "line": "Limited",
    "scope": "6 love figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/gifts-of-love.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2024/01/09/gifts-of-love/, downloaded 2026-10-15."
   },
   {
    "year": 2024,
-   "display": "2024",
+   "display": "March 22, 2024",
    "name": "Home Sweet Home Series 2024",
    "line": "Limited",
    "scope": "6 home figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/home-sweet-home.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2024/03/12/home-sweet-home/, downloaded 2026-10-15."
   },
   {
    "year": 2024,
-   "display": "2024",
+   "display": "July 24, 2024",
    "name": "Dinosaur Series 2024",
    "line": "Limited",
    "scope": "6 dinosaur figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/dinosaur.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2024/07/04/dinosaur-series/, downloaded 2026-10-15."
   },
   {
    "year": 2024,
-   "display": "2024",
+   "display": "September 27, 2024",
    "name": "Dog Time Series 2024",
    "line": "Limited",
    "scope": "9 dog figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/dog-time.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2024/09/04/dog-time/, downloaded 2026-10-15."
   },
   {
    "year": 2024,
-   "display": "2024",
+   "display": "November 20, 2024",
    "name": "Christmas Dinner Series 2024",
    "line": "Limited",
    "scope": "6 Christmas dinner figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/christmas-dinner.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2024/11/05/christmas-dinner2024/, downloaded 2026-10-15."
   },
   {
    "year": 2024,
-   "display": "2024",
+   "display": "April 25, 2024",
    "name": "HIPPERS Looking Back Series 2024",
    "line": "HIPPERS",
    "scope": "12 animal figures looking back.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15",
+   "image": "assets/img/hippers-looking-back.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2024,
+   "display": "June 8, 2024",
+   "name": "HIPPERS Garden Series",
+   "line": "HIPPERS",
+   "evidence": "A",
+   "scope": "Garden HIPPERS in flower and plant designs. The one HIPPERS set this archive holds no official photo for yet.",
+   "source": "Official Sonny Angel site, global news post, June 8, 2024, fetched 2026-10-15"
+  },
+  {
+   "year": 2024,
+   "display": "September 19, 2024",
+   "name": "HIPPERS Mofusand Series",
+   "line": "HIPPERS",
+   "evidence": "A",
+   "scope": "HIPPERS made with the Mofusand cat characters, in shark and sea creature costumes.",
+   "source": "Official Sonny Angel site, Dreams news post, September 19, 2024, fetched 2026-10-15",
+   "image": "assets/img/hippers-mofusand.jpg",
+   "image_source": "Official USA store product photo (first image on the product page), self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2024,
+   "display": "November 14, 2024",
+   "name": "HIPPERS Hello Kitty and Friends",
+   "line": "HIPPERS",
+   "evidence": "A",
+   "scope": "HIPPERS made with Sanrio: Hello Kitty, My Melody, Kuromi, Cinnamoroll, Pompompurin and Pochacco. A later report gives a January 2026 Japan launch; the conflict is named in the research record.",
+   "source": "Official Sonny Angel site, Dreams news post, November 14, 2024, fetched 2026-10-15",
+   "image": "assets/img/hippers-hello-kitty.jpg",
+   "image_source": "Official global store product photo (HIPPERS Hello Kitty and Friends), self-hosted in this repo. Source: sonnyangelstore.com product page, downloaded 2026-10-15."
+  },
+  {
+   "year": 2024,
+   "display": "July 19, 2024",
+   "name": "Sonny Angel x CASETiFY",
+   "line": "Limited",
+   "evidence": "B",
+   "scope": "A phone accessory collaboration in Harvest fruit and vegetable designs, sold with a case set carrying its own Hipper figure.",
+   "source": "Wikipedia, Sonny Angel, citing Rolling Stone and Teen Vogue, July 2024, fetched 2026-10-15"
   },
   {
    "year": 2025,
-   "display": "2025",
+   "display": "January 30, 2025",
    "name": "Kiss Kiss 2025",
    "line": "Limited",
    "scope": "5 figures. A mini figure charm series.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/kiss-kiss-charm.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2025/01/07/kisskiss/, downloaded 2026-10-15."
   },
   {
    "year": 2025,
-   "display": "2025",
+   "display": "March 21, 2025",
    "name": "Cherry Blossom Series, Hanami Edition 2025",
    "line": "Limited",
    "scope": "6 figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/cherry-blossom.jpg",
+   "image_source": "Official Dreams news post product photo, self-hosted in this repo. Source: sonnyangel.com/en/2025/02/18/cherryblossom-hanamiedition/, downloaded 2026-10-15."
   },
   {
    "year": 2025,
-   "display": "2025",
+   "display": "May 22, 2025",
    "name": "I LOVE RAINY DAY Series 2025",
    "line": "Limited",
    "scope": "6 rainy day figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/rainy-day.jpg",
+   "image_source": "Official series photo embedded in the Dreams news post (served from the official global store CDN), self-hosted in this repo. Source: sonnyangel.com/en/2025/05/07/iloverainyday/, downloaded 2026-10-15."
   },
   {
    "year": 2025,
-   "display": "2025",
+   "display": "July 31, 2025",
    "name": "Snack Series",
    "line": "Regular",
    "scope": "12 snack figures. The newest regular series on the official list.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Regular products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Regular products list, fetched 2026-10-15",
+   "image": "assets/img/snack.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": 2025,
-   "display": "2025",
+   "display": "September 25, 2025",
    "name": "Pumpkin Patch Series 2025",
    "line": "Limited",
    "scope": "6 pumpkin figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/pumpkin-patch.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2025/09/04/pumpkin-patch/, downloaded 2026-10-15."
   },
   {
    "year": 2025,
@@ -811,12 +1127,34 @@
   },
   {
    "year": 2025,
-   "display": "2025",
+   "display": "November 28, 2025",
    "name": "Santa's Little Helper Series 2025",
    "line": "Limited",
    "scope": "6 Christmas helper figures.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/santas-little-helper.jpg",
+   "image_source": "Official global store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelstore.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2025,
+   "display": "July 24, 2025",
+   "name": "HIPPERS Monchhichi Series",
+   "line": "HIPPERS",
+   "evidence": "A",
+   "scope": "HIPPERS made with Monchhichi, the classic monkey character, in colour variants.",
+   "source": "Official Sonny Angel site, Dreams news post, fetched 2026-10-15 ; Official USA store product page, fetched 2026-10-15",
+   "image": "assets/img/hippers-monchhichi.jpg",
+   "image_source": "Official USA store product photo (first image on the product page), self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
+  },
+  {
+   "year": 2025,
+   "display": "January 17, 2025",
+   "name": "20th Anniversary Complete Guide Book",
+   "line": "Limited",
+   "evidence": "A",
+   "scope": "The official complete guide book: 1,482 products from twenty years, sold with two bonus crowned mini figures.",
+   "source": "Official Sonny Angel site, Dreams news post, December 18, 2024, fetched 2026-10-15"
   },
   {
    "year": 2026,
@@ -825,7 +1163,9 @@
    "line": "Limited",
    "scope": "6 strawberry figures. Released January 22, 2026.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Dreams news post, fetched 2026-10-15 ; Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Dreams news post, fetched 2026-10-15 ; Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15",
+   "image": "assets/img/strawberry-love.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2026/01/09/sonny-angel-mini-figure-strawberry-love-series/, downloaded 2026-10-15."
   },
   {
    "year": 2026,
@@ -834,7 +1174,9 @@
    "line": "HIPPERS",
    "scope": "12 figures. Year from the official HIPPERS list order and its 2026 product art.",
    "evidence": "C",
-   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure HIPPERS products list, fetched 2026-10-15",
+   "image": "assets/img/hippers-cherry-blossom.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2026/02/26/sonny-angel-hippers-cherry-blossom-series/, downloaded 2026-10-15."
   },
   {
    "year": 2026,
@@ -843,7 +1185,9 @@
    "line": "Limited",
    "scope": "6 summer figures. Announced for June 25, 2026.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, fetched 2026-10-15",
+   "image": "assets/img/vacation.jpg",
+   "image_source": "Official Dreams news post series photo, self-hosted in this repo. Source: sonnyangel.com/en/2026/06/11/sonny-angel-summer-vacation-series-sun-kissed-style/, downloaded 2026-10-15."
   },
   {
    "year": 2026,
@@ -852,7 +1196,9 @@
    "line": "Limited",
    "scope": "5 figures. A collaboration with shu uemura, announced for October 22, 2026.",
    "evidence": "A",
-   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, fetched 2026-10-15"
+   "source": "Official Sonny Angel site, Mini Figure Limited products list, fetched 2026-10-15 ; Official Sonny Angel site, Dreams news post, fetched 2026-10-15",
+   "image": "assets/img/makeup-angel.jpg",
+   "image_source": "Official USA store product photo, self-hosted in this repo. First read as a hotlink from sonnyangelusa.com; downloaded 2026-10-15."
   },
   {
    "year": null,

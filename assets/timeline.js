@@ -3,8 +3,12 @@
   var q=document.getElementById('q');
   var data=null, line='all', term='';
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function plate(d){
+    if(d.image){return '<div class="plate"><img src="'+esc(d.image)+'" alt="Official product photo, '+esc(d.name)+'" loading="lazy" onerror="this.parentNode.innerHTML=\'<span class=&quot;initial&quot; aria-hidden=&quot;true&quot;>'+esc(d.name.charAt(0))+'</span>\'"></div>';}
+    return '<div class="plate"><span class="initial" aria-hidden="true">'+esc(d.name.charAt(0))+'</span></div>';
+  }
   function row(d){
-    return '<article class="drop tl"><div class="plate"><span class="initial" aria-hidden="true">'+esc(d.name.charAt(0))+'</span></div><div class="dropbody">'
+    return '<article class="drop tl"><div>'+plate(d)+'</div><div class="dropbody">'
       +'<p class="dropdate">'+esc(d.display)+'</p>'
       +'<h3 class="dropname">'+esc(d.name)+'<span class="fam">'+esc(d.line)+'</span></h3>'
       +'<p>'+esc(d.scope)+'</p>'
