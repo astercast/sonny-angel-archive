@@ -5,7 +5,8 @@ Run: python3 scripts/verify.py
 Fails loudly on: em dashes in presented copy, drops without
 provenance, pictured drops without an image source, count
 drift between the data file and its meta block, duplicate
-ids, and unsorted sort keys.
+ids, unsorted sort keys, and prices or resale figures in the
+fields rendered on a series card.
 """
 import json, re, sys
 from pathlib import Path
@@ -30,7 +31,18 @@ if len(set(ids)) != len(ids):
 sorts = [x["sort"] for x in drops]
 if sorts != sorted(sorts):
     fail.append("drops are not in sort order in the file")
+CARD_FIELDS = ("display_date", "name", "family", "theme", "lineup", "secret")
+CARD_MONEY_PATTERNS = [
+    re.compile(r"[$€£¥]"),
+    re.compile(r"\b(?:USD|CAD|GBP|EUR|dollars?|pounds?|euros?|cents?|bucks)\b", re.I),
+    re.compile(r"\b(?:price|priced|pricing|resale|resell|resold|market\s+value)\b", re.I),
+    re.compile(r"\b\d+(?:[.,]\d+)?\s*(?:USD|CAD|GBP|EUR|dollars?|pounds?|euros?|cents?|bucks)\b", re.I),
+]
 for x in drops:
+    for field in CARD_FIELDS:
+        value = str(x.get(field, ""))
+        if any(pattern.search(value) for pattern in CARD_MONEY_PATTERNS):
+            fail.append(f"{x['id']}: price or resale figure in card field {field}")
     if not x.get("source"):
         fail.append(f"{x['id']}: missing source provenance")
     if x.get("image"):
