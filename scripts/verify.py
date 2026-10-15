@@ -33,11 +33,23 @@ if sorts != sorted(sorts):
 for x in drops:
     if not x.get("source"):
         fail.append(f"{x['id']}: missing source provenance")
-    if x.get("image") and not x.get("image_source"):
-        fail.append(f"{x['id']}: image without image_source")
+    if x.get("image"):
+        if not x.get("image_source"):
+            fail.append(f"{x['id']}: image without image_source")
+        img = x["image"]
+        if img.startswith("http"):
+            fail.append(f"{x['id']}: image is a hotlink, must be self hosted")
+        else:
+            p = root / img
+            if not p.exists():
+                fail.append(f"{x['id']}: image file missing: {img}")
+            else:
+                head = p.read_bytes()[:8]
+                if not (head[:3] == b"\xff\xd8\xff" or head[:8] == b"\x89PNG\r\n\x1a\n"):
+                    fail.append(f"{x['id']}: image file is not a JPEG or PNG: {img}")
     if not x.get("ebay_query"):
         fail.append(f"{x['id']}: missing ebay_query")
-    for key in ("name", "theme", "lineup", "secret"):
+    for key in ("name", "theme", "lineup", "secret", "price_usd"):
         if "\u2014" in str(x.get(key, "")):
             fail.append(f"{x['id']}: em dash in {key}")
 pictured = sum(1 for x in drops if x.get("image"))

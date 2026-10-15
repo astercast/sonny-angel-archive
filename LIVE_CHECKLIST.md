@@ -12,10 +12,13 @@ order starts from a clean audit instead of a scramble.
   there is no vercel.json in the working repo.
 - Data: all data is precomputed JSON under `data/v1/`,
   never under `api/`.
-- Images: embedded hotlinks to the official stores' CDN
-  (the fleet embed model), so image hosting cost is zero
-  and provenance stays with the source. 21 of 39 drops are
-  pictured (r37 growth); the rest carry designed absence plates.
+- Images: self hosted in this repo under assets/img/
+  (user's order, 2026-10-15: all pictures must load).
+  Every file is a copy of an official store or official
+  Dreams news photo, provenance recorded per record in
+  data/v1/drops.json. 38 of 39 drops are pictured; the one
+  absence (HIPPERS Garden) is named in its record with the
+  evidence. Self hosting is static files only, no cost.
 - Search and filters: client side, over the local JSON.
 - Third party calls at runtime: none, apart from the image
   embeds and outbound links a reader chooses to follow.

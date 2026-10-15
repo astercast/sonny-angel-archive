@@ -97,6 +97,68 @@ reserved for dates and secrets, absence plates set like
 initials in an old ledger. If that does not read as this
 site alone, the build is not done.
 
+## Retheme study, 2026-10-15 (user's direct order, supersedes the theme above)
+
+The user, verbatim: "You need to match the theming of the
+Sonny Angel community it's pink it's cute it's stationery
+and artsy you know?" The cream and cherry editorial system
+above is superseded as the THEME. The structure is not:
+three link nav, one search, the chronological river, the
+same three pages. Only the skin changes. His companion
+orders the same night: all pictures load (photos are now
+self hosted in this repo), copy cut down, present, do not
+explain, and the home headline is just "Releases".
+
+References, principle level only:
+
+- **sonnyangel.com, the official Dreams site.** The brand's
+  own world is pink: signature pink logo, sakura and heart
+  motifs, soft product photography on pastel grounds, a
+  dated news river for releases. Principle taken: pink is
+  not decoration here, it is the brand's native ground, and
+  the release river is already how Dreams itself presents.
+- **Sanrio official online shop.** Character retail in
+  pastel: product chips with rounded corners and gentle
+  shadows, badges that read like stickers. Principle taken:
+  the sticker treatment (white rim, soft shadow, rounded
+  shape) is how this community's objects are presented.
+- **Kawaii Pen Shop.** Stationery retail: soft color
+  stories, washi tape and memo goods as the organizing
+  objects, paper textures doing the framing. Principle
+  taken: paper goods language, washi strips and stitched
+  dashed lines as dividers and mounts, used sparingly.
+
+Decisions:
+
+- **Palette.** Soft pink paper #FFF8FA. Ink a warm plum
+  #46303C. One deep pink #C2255C for everything that must
+  be read (dates, secrets, links); a lighter pink #F783AC
+  and blush #FDEBF3 carry the decoration. No gradients, no
+  glow, no glass.
+- **Type.** Rounded system sans (Arial Rounded, Hiragino
+  Maru Gothic) for the wordmark, headlines, years and drop
+  names. System sans for data. The serif is retired with
+  the editorial theme.
+- **Ornament, rationed to three.** A washi tape strip runs
+  under the header and caps each photo plate, slightly
+  rotated, with torn dashed edges. Rules are stitched:
+  2px dashed in soft pink. Family labels and the eBay and
+  store links are sticker chips, white rimmed, soft
+  shadowed. Nothing else decorates.
+- **Plates.** Rounded corners now. A photo with no verified
+  source keeps the absence plate, its initial in light
+  pink on blush.
+- **Pills, noted.** Pill shapes are on the fleet blacklist
+  as a generic tell. Here they are the theme's native
+  grammar (stickers, tabs, tape), used only where the
+  object is a sticker or a tab, never as a layout default.
+
+Recognizability test, restated: cover the wordmark. A soft
+pink sticker book page, washi taped photos, stitched
+rules, big rounded years. If that does not read as the
+Sonny Angel community's own scrapbook, the build is not
+done.
+
 ## Blacklist v4, pre check
 
 No purple or blue gradient dark theme. No glowing glass

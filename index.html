@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sonny Angel USA Archive. Every USA release, in order.</title>
-<meta name="description" content="Every Sonny Angel series released in the USA, in chronological order, with lineups, secrets, eBay searches, a fake guide and a verified restock watchlist.">
+<title>Sonny Angel USA Archive. Releases.</title>
+<meta name="description" content="Every Sonny Angel release in the USA, in order, with a real or fake guide and a restock watchlist.">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FBF7EE'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23C9331F' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FDEBF3'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23D6336C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <header class="chrome">
@@ -19,9 +19,8 @@
 </header>
 <main>
   <section class="head">
-    <h1>Every Sonny Angel America got, in the order it arrived.</h1>
-    <p class="count" id="count-line">Loading the river.</p>
-    <p class="standfirst">Sonny Angel launched in Japan on May 15, 2004. What follows is the United States story, oldest first. Nothing is sold here; links go out to eBay searches and to stores checked by hand.</p>
+    <h1>Releases</h1>
+    <p class="count" id="count-line"></p>
     <form class="search" role="search" onsubmit="return false">
       <label for="q">Search the archive</label>
       <input id="q" type="search" placeholder="Try: harvest, cat, kiss, 2019" autocomplete="off">
@@ -34,12 +33,6 @@
     </p>
   </section>
   <section id="river" aria-live="polite"></section>
-  <section class="honesty">
-    <h2>How the count works</h2>
-    <p id="counting-rule"></p>
-    <p id="known-gaps"></p>
-    <p>Every record carries its source and its photo provenance in the archive data file, data/v1/drops.json, published in the repo with this site.</p>
-  </section>
 </main>
 <footer>
   <nav aria-label="Footer">
@@ -47,8 +40,7 @@
     <a href="guide.html">Real or Fake, the counterfeit guide</a>
     <a href="watchlist.html">Restock Watchlist, verified stores</a>
   </nav>
-  <p>An independent collector archive. Not affiliated with Dreams Inc. Product photographs are embedded from the official stores and belong to their owners. Prices shown were read at build time and move.</p>
-  <p class="foot-count" id="foot-count"></p>
+  <p>An independent collector archive. Not affiliated with Dreams Inc. Photos are the official stores' own, kept here so they always load.</p>
 </footer>
 <script src="assets/app.js"></script>
 </body>

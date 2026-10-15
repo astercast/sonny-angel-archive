@@ -14,7 +14,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = Path.home() / "workspace/progress-archive/sonny-angel-archive/rotation-036"
+OUT = Path.home() / "workspace/progress-archive/sonny-angel-archive/pictures-theme-2026-10-15"
 OUT.mkdir(parents=True, exist_ok=True)
 PAGES = ["index.html", "guide.html", "watchlist.html"]
 
