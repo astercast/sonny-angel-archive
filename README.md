@@ -13,7 +13,7 @@ eBay searches per drop, a first class counterfeit guide, and
 a restock watchlist of stores verified firsthand.
 
 - Design study: `STUDY.md`
-- Data: `data/v1/drops.json` (39 drops, provenance per
+- Data: `data/v1/drops.json` (51 drops, provenance per
   record), `data/v1/watchlist.json` (4 verified stores,
   plus a checked and not listed section)
 - Pages: `index.html` (the river, search, family filters),
