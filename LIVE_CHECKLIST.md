@@ -15,10 +15,12 @@ machine, never Turbo) is the user's hand-step.
 
 ## Free tier audit (at build, 2026-10-14)
 
-- Hosting need: none yet. The site is fully static: 4 HTML
-  pages, 1 CSS file, 2 JS files, 2 JSON data files.
-- Server functions: none. No runtime is pinned anywhere;
-  there is no vercel.json in the working repo.
+- Hosting need: none yet. The site is fully static: 5 HTML
+  pages, CSS and JS under assets/, 3 JSON data files.
+- Server functions: none. No runtime is pinned anywhere.
+  The working repo's vercel.json (round 2, 2026-10-24) runs
+  scripts/build.py and serves the assembled site/ folder
+  only, so repo internals never publish on a Git build.
 - Data: all data is precomputed JSON under `data/v1/`,
   never under `api/`.
 - Images: self hosted in this repo under assets/img/

@@ -25,6 +25,14 @@ assets/app.js generates, so the page is complete without
 JavaScript. app.js still fetches the public data and re-renders
 the identical markup when it filters or searches.
 
+Publishing (round 2, 2026-10-24): the same run assembles the
+site/ folder, only the pages, assets/ and data/v1/, and
+vercel.json serves site/ as its outputDirectory with this
+script as its buildCommand. data-src/, scripts/ and the repo
+notes are never copied into site/, so a Git build publishes
+only the site. (.vercelignore alone could not do this: it
+only applies to CLI uploads, not Git builds.)
+
 The build is deterministic apart from one date rule, shared with
 app.js: a drop counts as released when its date string is not
 after the build day, and "upcoming / out now" follows from that.
@@ -32,6 +40,7 @@ Re-running the build on the same day changes nothing.
 """
 import json
 import re
+import shutil
 import sys
 from copy import deepcopy
 from datetime import date
@@ -42,6 +51,8 @@ ROOT = Path(__file__).resolve().parent.parent
 INTERNAL = ROOT / "data-src" / "drops.internal.json"
 PUBLIC = ROOT / "data" / "v1" / "drops.json"
 INDEX = ROOT / "index.html"
+SITE = ROOT / "site"
+SITE_PAGES = ("index.html", "timeline.html", "guide.html", "watchlist.html", "404.html")
 
 PRICE_KEY = re.compile(r"price", re.I)
 
@@ -146,6 +157,25 @@ def replace_block(html, start_marker, end_marker, new_inner, label):
     return html[: i + len(start_marker)] + new_inner + html[j:]
 
 
+def assemble_site():
+    """Copy only the public site into site/ (see module docstring)."""
+    if SITE.exists():
+        shutil.rmtree(SITE)
+    SITE.mkdir()
+    for name in SITE_PAGES:
+        shutil.copy2(ROOT / name, SITE / name)
+    shutil.copytree(ROOT / "assets", SITE / "assets",
+                    ignore=shutil.ignore_patterns("*.md"))
+    shutil.copytree(ROOT / "data" / "v1", SITE / "data" / "v1")
+    shipped = sorted(str(p.relative_to(SITE)) for p in SITE.rglob("*") if p.is_file())
+    bad = [s for s in shipped
+           if s.startswith(("data-src", "scripts")) or s.endswith(".md")
+           or "internal" in s or "BRIEF" in s]
+    if bad:
+        sys.exit(f"BUILD FAILED: internal files leaked into site/: {bad}")
+    return shipped
+
+
 def main():
     internal = json.loads(INTERNAL.read_text(encoding="utf-8"))
     drops = internal["drops"]
@@ -174,9 +204,11 @@ def main():
     if n != 1:
         sys.exit("BUILD FAILED: count-line span not found exactly once in index.html")
     INDEX.write_text(html, encoding="utf-8")
+    shipped = assemble_site()
     print(f"BUILD OK: public drops {len(ordered)} (price fields stripped), "
           f"river pre-rendered ({len(set(str(d['sort'])[:4] for d in ordered))} year blocks), "
-          f"featured = newest released as of {today}")
+          f"featured = newest released as of {today}, "
+          f"site/ assembled ({len(shipped)} public files, no data-src, scripts or notes)")
 
 
 if __name__ == "__main__":

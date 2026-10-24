@@ -24,9 +24,9 @@
    "kind": "Bookstore chain webstore and US stores",
    "name": "Books Kinokuniya USA",
    "url": "https://united-states.kinokuniya.com/t/hobby-and-goods/toys-and-collectibles/sonny-angel-and-smiski/sonny-angel",
-   "verification": "Catalog fetched firsthand at build time with live prices and Dreams USA product codes, including Animal Ver. 1 at code 4542202653753 and the Pumpkin Patch Series at 4542202659885. Real stock history across regular, HIPPERS and limited lines. Rechecked at r37: the USA catalog page was read firsthand, still listing Sonny Angel across regular, HIPPERS and limited lines at member prices about ten percent under list.",
+   "verification": "Catalog fetched firsthand at build time with live listings and Dreams USA product codes, including Animal Ver. 1 at code 4542202653753 and the Pumpkin Patch Series at 4542202659885. Real stock history across regular, HIPPERS and limited lines. Rechecked at r37: the USA catalog page was read firsthand, still listing Sonny Angel across regular, HIPPERS and limited lines.",
    "verified": "2026-10-15",
-   "watch_for": "Regular series, HIPPERS and seasonal limiteds. Member prices run about ten percent under list."
+   "watch_for": "Regular series, HIPPERS and seasonal limiteds. Members often get a small discount."
   },
   {
    "kind": "National retailer, online and in store",
@@ -40,10 +40,10 @@
    "kind": "Independent toy and gift shop, Ninth Street, New York",
    "name": "an.me, New York",
    "url": "https://anmeshop.com/search?q=sonny+angel",
-   "verification": "Store search fetched firsthand at build time showing 58 Sonny Angel products at near list prices, including Animal Ver. 1 to 4, Flower, Vegetable and HIPPERS Harvest. The shop carries press coverage of its January 2024 Sonny Angel drop crowd. Rechecked at r37: store search read firsthand, 40 Sonny Angel results at 13.00 to 13.75 dollars, near list.",
+   "verification": "Store search fetched firsthand at build time showing 58 Sonny Angel products, including Animal Ver. 1 to 4, Flower, Vegetable and HIPPERS Harvest. The shop carries press coverage of its January 2024 Sonny Angel drop crowd. Rechecked at r37: store search read firsthand, 40 Sonny Angel results.",
    "verified": "2026-10-15",
    "watch_for": "A deep back catalog, including older regular series. Online restocks go fast."
   }
  ],
- "rule": "A shop joins this list only after a firsthand check at the date shown: a real retailer, a real Sonny Angel catalog with prices in the normal range, and a stock history across more than one series. Listings are rechecked by rotation. The official USA app Store tab is the authority for authorized retailers."
+ "rule": "A shop joins this list only after a firsthand check at the date shown: a real retailer, a real Sonny Angel catalog, and a stock history across more than one series. Listings are rechecked by rotation. The official USA app Store tab is the authority for authorized retailers."
 }

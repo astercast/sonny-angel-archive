@@ -63,7 +63,13 @@
       var hay=(d.name+' '+d.theme+' '+d.lineup+' '+d.display_date+' '+d.family).toLowerCase();
       return hay.indexOf(term)>-1;
     });
-    if(!list.length){river.innerHTML='<p class="empty">Nothing matches that. Try a shorter word.</p>';return;}
+    var cl=document.getElementById('count-line');
+    if(!list.length){
+      river.innerHTML='<p class="empty" role="status">Nothing matches that. Try a shorter word.</p>';
+      cl.textContent='Showing 0 of '+data.meta.catalogued+' releases.';
+      river.scrollIntoView({block:'nearest'});
+      return;
+    }
     var html='',year=null;
     list.forEach(function(d){
       var y=String(d.sort).slice(0,4);
@@ -73,7 +79,7 @@
     });
     html+='</div></div>';
     river.innerHTML=html;
-    document.getElementById('count-line').textContent=
+    cl.textContent=
       'Showing '+list.length+' of '+data.meta.catalogued+' releases.';
   }
   fetch('data/v1/drops.json').then(function(r){return r.json();}).then(function(j){

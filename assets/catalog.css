@@ -1,5 +1,5 @@
 /* ================================================================
-   THE CARD CATALOG — the archive layer (rotation 140, design
+   THE CARD CATALOG, the archive layer (rotation 140, design
    consult "The Card Catalog", graded Round 368 SO1-SO4).
    Loaded after style.css on every page; fonts are self-hosted
    (see assets/fonts/FONTS.md): zero remote font requests.
@@ -137,7 +137,7 @@ main { max-inline-size: var(--page); margin: 0 auto; padding: 0 var(--gutter) ca
   max-inline-size: 46rem;
   margin-top: calc(var(--ln) * 1.5);
   padding: calc(var(--ln) * .5) var(--ln) calc(var(--ln) * 1.5);
-  rotate: -1deg;
+  rotate: 0deg;
 }
 .card-tab {
   grid-column: 1 / -1;
@@ -163,6 +163,9 @@ main { max-inline-size: var(--page); margin: 0 auto; padding: 0 var(--gutter) ca
   opacity: .9;
 }
 .card-lines p { margin: 0; }
+.card-lines { background: var(--card); padding-inline: 14px; border-radius: 3px; }
+.card-tab { justify-self: start; background: var(--card); padding-inline: 6px; border-radius: 3px; }
+#river .dropbody { background: var(--card); padding-inline: 14px; border-radius: 3px; }
 .card-date { font-size: var(--fs-small); color: var(--cherry); font-weight: 700; }
 .card-name { margin: 0; font: 700 var(--fs-name)/var(--ln) var(--font); }
 .card-collab { font-size: var(--fs-small); color: var(--muted); }
@@ -241,8 +244,8 @@ main { max-inline-size: var(--page); margin: 0 auto; padding: 0 var(--gutter) ca
   padding: var(--ln) var(--ln) calc(var(--ln) * 1.5);
   border: 0;
 }
-#river .rows .drop:nth-child(odd)  { rotate: -.4deg; }
-#river .rows .drop:nth-child(even) { rotate: .35deg; }
+#river .rows .drop:nth-child(odd)  { rotate: 0deg; }
+#river .rows .drop:nth-child(even) { rotate: 0deg; }
 #river .plate { aspect-ratio: 1; border-radius: 3px; overflow: hidden; background: var(--paper); display: grid; place-items: center; }
 #river .plate img { inline-size: 100%; block-size: 100%; object-fit: cover; }
 #river .initial { font: 700 2.5rem/1 var(--font); color: var(--cherry); }

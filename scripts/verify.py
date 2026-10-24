@@ -104,6 +104,20 @@ for x in drops:
 pictured = sum(1 for x in drops if x.get("image"))
 print(f"drops={len(drops)} pictured={pictured} absent={len(drops)-pictured}")
 
+# Round 2 (2026-10-24): no price FIGURES in any presented copy.
+# (The word price may appear, for example the guide's price check;
+# an amount, a dollar figure or a percent off never may.)
+PRICE_FIGURE_PATTERNS = [
+    re.compile(r"\$\s*\d"),
+    re.compile(r"\b\d+(?:[.,]\d+)?\s*(?:dollars|USD|bucks)\b", re.I),
+    re.compile(r"\b(?:\d+|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)\s+percent\b", re.I),
+]
+for p in pages + ["guide.html", "data/v1/watchlist.json"]:
+    t = (root / p).read_text(encoding="utf-8")
+    for pattern in PRICE_FIGURE_PATTERNS:
+        if pattern.search(t):
+            fail.append(f"price figure in presented copy {p}: {pattern.pattern}")
+
 w = json.loads((root / "data/v1/watchlist.json").read_text())
 for s in w["retailers"]:
     if not s.get("verification") or not s.get("verified"):
@@ -152,6 +166,30 @@ for x in entries:
     if "\u2014" in str(x.get("image_source", "")):
         fail.append(f"history {x['name']}: em dash in image_source")
 print(f"history_entries={len(entries)}")
+
+# Round 2 (2026-10-24): when a build has assembled site/, it must
+# hold the whole public site and nothing internal.
+site = root / "site"
+if site.exists():
+    for name in ("index.html", "timeline.html", "guide.html", "watchlist.html", "404.html",
+                 "assets/style.css", "assets/catalog.css", "assets/app.js",
+                 "assets/timeline.js", "assets/watchlist.js",
+                 "data/v1/drops.json", "data/v1/history.json", "data/v1/watchlist.json"):
+        if not (site / name).exists():
+            fail.append(f"site/ is missing {name}")
+    for p in site.rglob("*"):
+        if p.is_file():
+            rel = str(p.relative_to(site))
+            if rel.startswith(("data-src", "scripts")) or rel.endswith(".md") or "internal" in rel or "BRIEF" in rel:
+                fail.append(f"internal file shipped in site/: {rel}")
+    site_drops = json.loads((site / "data/v1/drops.json").read_text())
+    for x in site_drops["drops"]:
+        leaked = [k for k in x if "price" in k.lower()]
+        if leaked:
+            fail.append(f"site drops {x['id']}: price field in shipped public data: {leaked}")
+    print(f"site_files={sum(1 for p in site.rglob('*') if p.is_file())}")
+else:
+    print("site/ not built yet (run scripts/build.py)")
 
 if fail:
     print("VERIFY FAILED (history):")

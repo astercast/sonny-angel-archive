@@ -21,9 +21,19 @@ a restock watchlist of stores verified firsthand.
   the featured card and the count line into `index.html`.
   Edit the internal source, never the generated file.
   Also `data/v1/watchlist.json` (4 verified stores,
-  plus a checked and not listed section)
+  plus a checked and not listed section) and
+  `data/v1/history.json` (129 series lines, 2004 to today,
+  the Full Timeline's data, with a source named per entry)
 - Pages: `index.html` (the river, search, family filters),
-  `guide.html` (Real or Fake), `watchlist.html`, `404.html`
+  `timeline.html` (Full Timeline, the deep history; opens on
+  the years before 2019, the part the river does not cover
+  in full), `guide.html` (Real or Fake), `watchlist.html`,
+  `404.html`
+- Publishing: `scripts/build.py` also assembles `site/`
+  (only the pages, `assets/` and `data/v1/`; gitignored).
+  `vercel.json` runs that build and serves `site/` as its
+  output directory, so `data-src/`, `scripts/` and the repo
+  notes never publish on a Git build.
 - Checks: `python3 scripts/verify.py`
 - Captures: `python3 scripts/capture.py` writes desktop and
   phone frames plus a jumble and tap census to the progress
