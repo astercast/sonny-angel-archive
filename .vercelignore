@@ -1,0 +1,8 @@
+# The internal data source never ships: data-src/ holds the full
+# internal record, including price_usd, which scripts/build.py
+# strips from the public data/v1/drops.json at build time (TS2,
+# rotation 143). Build and check scripts are not site files either.
+data-src/
+scripts/
+hidden_files/
+*.md

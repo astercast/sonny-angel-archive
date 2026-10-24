@@ -6,7 +6,11 @@ Fails loudly on: em dashes in presented copy, drops without
 provenance, pictured drops without an image source, count
 drift between the data file and its meta block, duplicate
 ids, unsorted sort keys, and prices or resale figures in the
-fields rendered on a series card.
+fields rendered on a series card. Also (rotation 143): any price
+field surviving in the PUBLIC data file (TS2: prices live only
+in the internal source, data-src/drops.internal.json, which
+must itself stay complete), and a river that is not fully
+pre-rendered into index.html (TS4).
 """
 import json, re, sys
 from pathlib import Path
@@ -31,6 +35,39 @@ if len(set(ids)) != len(ids):
 sorts = [x["sort"] for x in drops]
 if sorts != sorted(sorts):
     fail.append("drops are not in sort order in the file")
+
+# TS2 (rotation 143): the public file ships no price field at all;
+# the internal source keeps the complete record, price included.
+for x in drops:
+    leaked = [k for k in x if "price" in k.lower()]
+    if leaked:
+        fail.append(f"{x['id']}: price field in PUBLIC data: {leaked}")
+internal_path = root / "data-src" / "drops.internal.json"
+if not internal_path.exists():
+    fail.append("internal source missing: data-src/drops.internal.json")
+else:
+    internal = json.loads(internal_path.read_text())["drops"]
+    if [x["id"] for x in internal] != ids:
+        fail.append("internal source drop ids do not match the public file, in order")
+    for x in internal:
+        if not x.get("price_usd"):
+            fail.append(f"{x['id']}: internal record missing price_usd")
+        if "\u2014" in str(x.get("price_usd", "")):
+            fail.append(f"{x['id']}: em dash in internal price_usd")
+
+# TS4 (rotation 143): index.html carries the whole river and the
+# featured card as built markup, so the page is complete with no
+# JavaScript. app.js re-renders the identical markup to filter.
+index_html = (root / "index.html").read_text(encoding="utf-8")
+if index_html.count('<article class="drop">') != len(drops):
+    fail.append("river is not fully pre-rendered in index.html (drop article count)")
+year_count = len({str(x["sort"])[:4] for x in drops})
+if index_html.count('<div class="yearblock">') != year_count:
+    fail.append("river is not fully pre-rendered in index.html (year block count)")
+if '<article class="index-card featured"' not in index_html:
+    fail.append("featured card is not pre-rendered in index.html")
+if not re.search(r'<span id="count-line">[^<]+</span>', index_html):
+    fail.append("count line is not pre-rendered in index.html")
 CARD_FIELDS = ("display_date", "name", "family", "theme", "lineup", "secret")
 CARD_MONEY_PATTERNS = [
     re.compile(r"[$€£¥]"),

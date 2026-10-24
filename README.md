@@ -14,7 +14,13 @@ a restock watchlist of stores verified firsthand.
 
 - Design study: `STUDY.md`
 - Data: `data/v1/drops.json` (51 drops, provenance per
-  record), `data/v1/watchlist.json` (4 verified stores,
+  record) is GENERATED: `python3 scripts/build.py` writes it
+  from the internal source `data-src/drops.internal.json`
+  (never shipped; listed in .vercelignore), stripping every
+  price field for the public file, and pre-renders the river,
+  the featured card and the count line into `index.html`.
+  Edit the internal source, never the generated file.
+  Also `data/v1/watchlist.json` (4 verified stores,
   plus a checked and not listed section)
 - Pages: `index.html` (the river, search, family filters),
   `guide.html` (Real or Fake), `watchlist.html`, `404.html`
