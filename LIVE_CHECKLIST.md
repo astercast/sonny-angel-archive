@@ -15,8 +15,14 @@ machine, never Turbo) is the user's hand-step.
 
 ## Free tier audit (at build, 2026-10-14)
 
-- Hosting need: none yet. The site is fully static: 5 HTML
-  pages, CSS and JS under assets/, 3 JSON data files.
+- Hosting need: none yet. The site is fully static: 6 HTML
+  pages (sheet.html, My sticker sheet, added 2026-10-24),
+  CSS and JS under assets/, 6 JSON data files (the heartbeat
+  outputs stock.json, candidates.json and pulse.json ship
+  with the rest of data/v1; the heartbeat workflow file
+  lands in the working repo, and carrying workflow files to
+  the live repo rides the owner's web-UI move, the standing
+  gh-push workflow-scope wall).
 - Server functions: none. No runtime is pinned anywhere.
   The working repo's vercel.json (round 2, 2026-10-24) runs
   scripts/build.py and serves the assembled site/ folder

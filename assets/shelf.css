@@ -1,0 +1,29 @@
+/* shelf.css: "My sticker sheet". Uses the site's own tokens. No prices. No gradients, no glow. */
+.sheet-intro{max-width:1080px;margin:0 auto;padding:40px 20px 4px}
+.sheet{max-width:1080px;margin:0 auto;padding:0 20px 60px}
+.sheet-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;margin:0 0 18px}
+.sheet-count{font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--ink,#46303C);font-variant-numeric:tabular-nums}
+.sheet-count small{font-size:.5em;color:var(--muted,#8A5A6D);font-weight:500}
+.sheet-bar{flex:1 1 200px;height:10px;border:2px solid var(--accent,#C2255C);border-radius:6px;background:repeating-linear-gradient(90deg,transparent 0 11px,var(--rule,#F3C2D8) 11px 12px);position:relative;overflow:hidden}
+.sheet-bar i{position:absolute;inset:0 auto 0 0;width:0;background:var(--pink,#F783AC);transition:width .4s}
+.sheet-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+.sheet-tools button,.sheet-tools a{font:inherit;font-size:14px;color:var(--ink,#46303C);background:#fff;border:1.5px solid var(--accent,#C2255C);border-radius:8px;padding:8px 14px;cursor:pointer;text-decoration:none}
+.sheet-tools button:hover{background:var(--blush,#FDEBF3)}
+.sheet-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:22px 16px}
+.stk{position:relative;display:block;border:0;padding:0;background:none;font:inherit;text-align:left;cursor:pointer;transform:rotate(var(--r,0deg));transition:transform .2s}
+.stk:hover,.stk:focus-visible{transform:rotate(0) translateY(-3px);outline:none}
+.stk:focus-visible .stk-die{outline:3px solid var(--accent,#C2255C);outline-offset:3px}
+.stk-die{display:block;aspect-ratio:1;border-radius:18px;background:#fff;border:3px solid #fff;box-shadow:0 0 0 1.5px var(--rule,#F3C2D8),0 3px 0 var(--rule,#F3C2D8);overflow:hidden}
+.stk img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .3s,opacity .3s}
+.stk[aria-pressed=false] .stk-die{background:var(--blush,#FDEBF3);box-shadow:0 0 0 2px var(--rule,#F3C2D8);border-style:dashed;border-color:var(--rule,#F3C2D8)}
+.stk[aria-pressed=false] img{filter:grayscale(1) contrast(.6) brightness(1.25);opacity:.45}
+.stk[aria-pressed=true]::after{content:"\2665";position:absolute;right:-6px;top:-8px;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:var(--accent,#C2255C);color:#fff;font-size:15px;transform:rotate(12deg);animation:stk-pop .25s}
+@keyframes stk-pop{from{transform:scale(.3) rotate(-30deg)}}
+.stk-name{display:block;margin-top:8px;font-size:13px;line-height:1.3;color:var(--ink,#46303C);text-wrap:balance}
+.stk-year{display:block;font-size:11px;color:var(--muted,#8A5A6D);letter-spacing:.06em}
+.stk-store{display:inline-block;margin-top:3px;font-size:11px;color:#2d6a4f;background:var(--mint,#BFE9D2);border-radius:4px;padding:1px 6px}
+.stk-new{position:absolute;left:-4px;top:-6px;font-size:11px;font-weight:700;color:#fff;background:var(--accent,#C2255C);padding:2px 8px;border-radius:4px;transform:rotate(-8deg);z-index:1}
+.sheet-note{font-size:12px;color:var(--muted,#8A5A6D);margin-top:26px}
+@media print{.sheet-tools,.sheet-note{display:none}.stk{break-inside:avoid;transform:none}}
+@media(prefers-reduced-motion:reduce){.stk,.stk img,.sheet-bar i{transition:none}.stk[aria-pressed=true]::after{animation:none}}
+.stk-none{display:grid;place-items:center;height:100%;font-size:44px;font-weight:700;color:var(--pink,#F783AC)}

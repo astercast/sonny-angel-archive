@@ -299,3 +299,62 @@ main { max-inline-size: var(--page); margin: 0 auto; padding: 0 var(--gutter) ca
 }
 @keyframes place { from { opacity: 0; translate: 0 -10px; rotate: -4deg; } }
 @keyframes deal  { from { opacity: 0; translate: 0 12px; } }
+
+/* ============ ROUND 3 ============ */
+
+/* The pinned year label sits just under the header, not behind it. */
+#river .year { top: 5.25rem; }
+#river .yearblock { scroll-margin-top: 5rem; }
+
+/* The search line is a full touch height. */
+.search input { min-height: 44px; }
+
+/* A short row of years to jump along the river. */
+.yearjump { display: flex; flex-wrap: wrap; gap: 0 .9rem; margin: var(--ln) 0 .5rem; padding: 0; }
+.yearjump[hidden] { display: none; }
+.yearjump a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-weight: 700; color: var(--cherry); text-decoration: none;
+}
+.yearjump a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+
+/* The empty search says what to do. */
+.clearall {
+  min-height: 44px; margin-inline-start: .5rem; padding: .5rem 0;
+  font: inherit; font-weight: 700; color: var(--cherry);
+  background: none; border: 0; text-decoration: underline; cursor: pointer;
+}
+
+/* Every series link looks like the one on the newest card: a plain
+   underlined link. Delete this block to keep the pill buttons. */
+#river .ebay {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0;
+  color: var(--ink); background: none; border: 0; border-radius: 0; box-shadow: none;
+  text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--line);
+}
+#river .ebay:hover { background: none; text-decoration-color: var(--cherry); }
+
+/* Timeline: a line with no photo gets a slim letter tab, not a big square. */
+#river .tl:has(.initial) { grid-template-columns: 3.5rem minmax(0, 1fr); }
+#river .tl:has(.initial) .plate { width: 3.5rem; height: 3.5rem; border-radius: 10px; }
+#river .tl:has(.initial) .plate::before { display: none; }
+#river .tl .initial { font-size: 1.6rem; }
+
+/* Guide: the checks and the notes share one column width. */
+.checks li { max-width: none; }
+
+/* Phone: the header scrolls away, the menu stays on one line,
+   and the photo column is narrower so the words get the room. */
+@media (width < 34rem) {
+  .chrome { position: static; }
+  .chrome nav { flex-wrap: nowrap; gap: 0 .9rem; inline-size: 100%; }
+  .chrome nav a { font-size: .9rem; }
+  #river .year { top: 0; }
+  #river .yearblock { scroll-margin-top: .5rem; }
+  #river .drop { grid-template-columns: 5rem minmax(0, 1fr); gap: 0 .75rem; }
+  #river .plate { width: 5rem; height: 5rem; }
+  #river .plate::before { width: 34px; height: 10px; top: -6px; }
+  #river .initial { font-size: 2rem; }
+  #river .nophoto { max-width: 5rem; }
+  #river .tl:has(.initial) { grid-template-columns: 3.5rem minmax(0, 1fr); }
+}

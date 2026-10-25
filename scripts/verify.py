@@ -18,8 +18,9 @@ from pathlib import Path
 root = Path(__file__).resolve().parent.parent
 fail = []
 
-pages = ["index.html", "guide.html", "watchlist.html", "404.html", "timeline.html",
-         "assets/style.css", "assets/app.js", "assets/watchlist.js", "assets/timeline.js"]
+pages = ["index.html", "guide.html", "watchlist.html", "404.html", "timeline.html", "sheet.html",
+         "assets/style.css", "assets/app.js", "assets/watchlist.js", "assets/timeline.js",
+         "assets/shelf.css", "assets/shelf.js", "assets/pulse.css", "assets/pulse.js"]
 for p in pages:
     t = (root / p).read_text(encoding="utf-8")
     if "\u2014" in t or "\u2013" in t:
@@ -118,6 +119,42 @@ for p in pages + ["guide.html", "data/v1/watchlist.json"]:
         if pattern.search(t):
             fail.append(f"price figure in presented copy {p}: {pattern.pattern}")
 
+# Bundle 2026-10-24 (My sticker sheet + heartbeat): the word
+# price itself never appears in any PUBLIC data file. This is the
+# verify-side mirror of the guard step in
+# scripts/heartbeat/stock.py (which fails the heartbeat run on
+# the same condition) and of the workflow guard step.
+for name in ("drops.json", "history.json", "watchlist.json",
+             "stock.json", "candidates.json", "pulse.json"):
+    p = root / "data/v1" / name
+    if not p.exists():
+        fail.append(f"data/v1/{name} missing (heartbeat seed: scripts/heartbeat/stock.py)")
+    elif "price" in p.read_text(encoding="utf-8").lower():
+        fail.append(f"price text in public data file data/v1/{name}")
+
+# The sheet page exists, mounts the sheet, and every page's main
+# nav carries My Sheet between Real or Fake and Watchlist.
+sheet = (root / "sheet.html").read_text(encoding="utf-8")
+if '<main id="m" class="sheet">' not in sheet:
+    fail.append("sheet.html: mount point <main id=\"m\" class=\"sheet\"> missing")
+if "mountSheet" not in sheet or "assets/shelf.js" not in sheet:
+    fail.append("sheet.html: shelf.js mount script missing")
+if "assets/shelf.css" not in sheet:
+    fail.append("sheet.html: shelf.css link missing")
+for p in ("index.html", "timeline.html", "guide.html", "watchlist.html", "sheet.html"):
+    t = (root / p).read_text(encoding="utf-8")
+    nav = t[t.find('<nav aria-label="Main">'):t.find("</nav>")]
+    order = [nav.find(x) for x in ("Real or Fake", "My Sheet", "Watchlist")]
+    if -1 in order or order != sorted(order):
+        fail.append(f"{p}: main nav does not carry My Sheet between Real or Fake and Watchlist")
+    if "assets/pulse.js" not in t or "assets/pulse.css" not in t:
+        fail.append(f"{p}: pulse kit not wired")
+t404 = (root / "404.html").read_text(encoding="utf-8")
+nav404 = t404[t404.find('<nav aria-label="Main">'):t404.find("</nav>")]
+order404 = [nav404.find(x) for x in ("Real or Fake", "My Sheet", "Watchlist")]
+if -1 in order404 or order404 != sorted(order404):
+    fail.append("404.html: main nav does not carry My Sheet between Real or Fake and Watchlist")
+
 w = json.loads((root / "data/v1/watchlist.json").read_text())
 for s in w["retailers"]:
     if not s.get("verification") or not s.get("verified"):
@@ -171,12 +208,20 @@ print(f"history_entries={len(entries)}")
 # hold the whole public site and nothing internal.
 site = root / "site"
 if site.exists():
-    for name in ("index.html", "timeline.html", "guide.html", "watchlist.html", "404.html",
+    for name in ("index.html", "timeline.html", "guide.html", "watchlist.html", "404.html", "sheet.html",
                  "assets/style.css", "assets/catalog.css", "assets/app.js",
                  "assets/timeline.js", "assets/watchlist.js",
-                 "data/v1/drops.json", "data/v1/history.json", "data/v1/watchlist.json"):
+                 "assets/shelf.css", "assets/shelf.js", "assets/pulse.css", "assets/pulse.js",
+                 "data/v1/drops.json", "data/v1/history.json", "data/v1/watchlist.json",
+                 "data/v1/stock.json", "data/v1/candidates.json", "data/v1/pulse.json"):
         if not (site / name).exists():
             fail.append(f"site/ is missing {name}")
+    for name in ("index.html", "timeline.html", "guide.html", "watchlist.html", "404.html", "sheet.html"):
+        if '<meta name="built"' not in (site / name).read_text(encoding="utf-8"):
+            fail.append(f"site/{name}: build stamp <meta name=\"built\"> missing (pulse bar needs it)")
+    for name in ("stock.json", "candidates.json", "pulse.json"):
+        if "price" in (site / "data/v1" / name).read_text(encoding="utf-8").lower():
+            fail.append(f"price text in shipped public data file site/data/v1/{name}")
     for p in site.rglob("*"):
         if p.is_file():
             rel = str(p.relative_to(site))

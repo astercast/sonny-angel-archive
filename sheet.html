@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My sticker sheet. Sonny Angel USA Archive.</title>
+<meta name="description" content="Your own Sonny Angel sticker sheet: every USA series as a sticker to tap as you collect it. Your sheet is saved on this device only.">
+<meta name="theme-color" content="#FFF4F7">
+<link rel="preload" href="assets/fonts/zen-maru-gothic-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/catalog.css">
+<link rel="stylesheet" href="assets/shelf.css">
+<link rel="stylesheet" href="assets/pulse.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FDEBF3'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23D6336C' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="chrome">
+  <a class="wordmark" href="index.html">Sonny Angel <span>USA Archive</span></a>
+  <nav aria-label="Main">
+    <a href="index.html">Archive</a>
+    <a href="timeline.html">Full Timeline</a>
+    <a href="guide.html">Real or Fake</a>
+    <a href="sheet.html" aria-current="page">My Sheet</a>
+    <a href="watchlist.html">Watchlist</a>
+  </nav>
+</header>
+<section class="sheet-intro">
+  <h1>My sticker sheet</h1>
+  <p class="standfirst">Every series in the archive as a sticker. Tap the ones you own. Your sheet is saved on this device only, and nothing is sent anywhere.</p>
+</section>
+<main id="m" class="sheet">
+  <noscript><p class="empty">The sticker sheet needs JavaScript. The full list of series is on the <a href="index.html">archive page</a>.</p></noscript>
+</main>
+<footer>
+  <nav aria-label="Footer">
+    <a href="index.html">Archive, the full river</a>
+    <a href="timeline.html">Full Timeline, the whole history</a>
+    <a href="guide.html">Real or Fake, the counterfeit guide</a>
+    <a href="sheet.html">My sticker sheet, your collection</a>
+    <a href="watchlist.html">Restock Watchlist, verified stores</a>
+  </nav>
+  <p>An independent collector archive. Not affiliated with Dreams Inc. or with any store listed.</p>
+</footer>
+<script type="module">
+  import { mountSheet } from "./assets/shelf.js";
+  mountSheet(document.getElementById("m"));
+</script>
+<script type="module" src="assets/pulse.js"></script>
+</body>
+</html>

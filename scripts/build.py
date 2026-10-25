@@ -37,13 +37,22 @@ The build is deterministic apart from one date rule, shared with
 app.js: a drop counts as released when its date string is not
 after the build day, and "upcoming / out now" follows from that.
 Re-running the build on the same day changes nothing.
+
+Bundle 2026-10-24 (My sticker sheet + heartbeat): sheet.html is
+a site page, and the whole data/v1 folder is copied into site/,
+which is how the heartbeat outputs (stock.json, candidates.json,
+pulse.json, written by scripts/heartbeat/stock.py) ship. The one
+non-deterministic stamp: each assembled page in site/ (never the
+source pages) gains <meta name="built" content="...Z"> with the
+build time, which assets/pulse.js reads for its "Updated N
+minutes ago" bar.
 """
 import json
 import re
 import shutil
 import sys
 from copy import deepcopy
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
@@ -52,7 +61,7 @@ INTERNAL = ROOT / "data-src" / "drops.internal.json"
 PUBLIC = ROOT / "data" / "v1" / "drops.json"
 INDEX = ROOT / "index.html"
 SITE = ROOT / "site"
-SITE_PAGES = ("index.html", "timeline.html", "guide.html", "watchlist.html", "404.html")
+SITE_PAGES = ("index.html", "timeline.html", "guide.html", "watchlist.html", "sheet.html", "404.html")
 
 PRICE_KEY = re.compile(r"price", re.I)
 
@@ -95,7 +104,7 @@ def row(d):
             + "<p>" + esc(d["theme"]) + "</p>"
             + '<p class="lineup"><b>Lineup.</b> ' + esc(d["lineup"]) + "</p>"
             + '<p class="secretline"><b>Secret.</b> ' + esc(d["secret"]) + "</p>"
-            + '<a class="ebay" href="' + ebay(d) + '" rel="noopener nofollow">'
+            + '<a class="ebay" aria-label="Search eBay for ' + esc(d["name"]) + '" href="' + ebay(d) + '" rel="noopener nofollow">'
             + "Search eBay for this series</a></div></article>")
 
 
@@ -138,7 +147,7 @@ def featured_html(drops, today):
              + "<p>" + esc(d["theme"]) + "</p>"
              + "<p><b>Lineup.</b> " + esc(d["lineup"]) + "</p>"
              + '<p><b class="secret">Secret.</b> ' + esc(secret) + "</p>"
-             + '<p><a class="card-link" href="' + ebay(d)
+             + '<p><a class="card-link" aria-label="Search eBay for ' + esc(d["name"]) + '" href="' + ebay(d)
              + '" rel="noopener nofollow">Search eBay for this series</a></p>'
              + '</div><span class="card-hole" aria-hidden="true"></span></article>')
     return html
@@ -164,9 +173,29 @@ def assemble_site():
     SITE.mkdir()
     for name in SITE_PAGES:
         shutil.copy2(ROOT / name, SITE / name)
+    # The pulse kit reads this stamp (assets/pulse.js); it goes on
+    # the assembled copies only, so source pages stay deterministic.
+    built = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    for name in SITE_PAGES:
+        p = SITE / name
+        t = p.read_text(encoding="utf-8")
+        if '<meta name="built"' in t:
+            t = re.sub(r'<meta name="built" content="[^"]*">',
+                       f'<meta name="built" content="{built}">', t)
+        else:
+            t = t.replace('<meta charset="utf-8">',
+                          '<meta charset="utf-8">\n<meta name="built" content="'
+                          + built + '">', 1)
+        p.write_text(t, encoding="utf-8")
     shutil.copytree(ROOT / "assets", SITE / "assets",
                     ignore=shutil.ignore_patterns("*.md"))
     shutil.copytree(ROOT / "data" / "v1", SITE / "data" / "v1")
+    # The heartbeat outputs ship with the rest of data/v1; fail
+    # loudly if the seed has not been run (scripts/heartbeat/stock.py).
+    for name in ("stock.json", "candidates.json", "pulse.json"):
+        if not (SITE / "data" / "v1" / name).exists():
+            sys.exit(f"BUILD FAILED: data/v1/{name} missing from site/; "
+                     "run scripts/heartbeat/stock.py first")
     shipped = sorted(str(p.relative_to(SITE)) for p in SITE.rglob("*") if p.is_file())
     bad = [s for s in shipped
            if s.startswith(("data-src", "scripts")) or s.endswith(".md")
@@ -185,6 +214,9 @@ def main():
                      "the internal source must stay complete (SO4)")
 
     public = strip_prices(deepcopy(internal))
+    # Source notes never mention that a source lists a price.
+    for d in public["drops"]:
+        d["source"] = d["source"].replace(", its own catalog listing priced in USD,", ",")
     for d in public["drops"]:
         leaked = [k for k in d if PRICE_KEY.search(k)]
         if leaked:

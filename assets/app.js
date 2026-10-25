@@ -19,7 +19,7 @@
       +'<p>'+esc(d.theme)+'</p>'
       +'<p class="lineup"><b>Lineup.</b> '+esc(d.lineup)+'</p>'
       +'<p class="secretline"><b>Secret.</b> '+esc(d.secret)+'</p>'
-      +'<a class="ebay" href="'+ebay(d)+'" rel="noopener nofollow">Search eBay for this series</a>'
+      +'<a class="ebay" aria-label="Search eBay for '+esc(d.name)+'" href="'+ebay(d)+'" rel="noopener nofollow">Search eBay for this series</a>'
       +'</div></article>';
   }
   /* SO2 (rotation 140): the featured card is generated from the
@@ -46,7 +46,7 @@
       +'<p>'+esc(d.theme)+'</p>'
       +'<p><b>Lineup.</b> '+esc(d.lineup)+'</p>'
       +'<p><b class="secret">Secret.</b> '+esc(secret)+'</p>'
-      +'<p><a class="card-link" href="'+ebay(d)+'" rel="noopener nofollow">Search eBay for this series</a></p>'
+      +'<p><a class="card-link" aria-label="Search eBay for '+esc(d.name)+'" href="'+ebay(d)+'" rel="noopener nofollow">Search eBay for this series</a></p>'
       +'</div><span class="card-hole" aria-hidden="true"></span></article>';
   }
   /* TS4 (rotation 143): index.html ships with the river, the
@@ -55,6 +55,24 @@
      complete without JavaScript. render() below re-creates the
      identical markup from the public data when the visitor
      searches or filters. */
+  function emptyMsg(on,termNow){
+    return '<p class="empty" role="status">Nothing matches that.'+(on||termNow?' <button type="button" class="clearall">Show everything</button>':'')+'</p>';
+  }
+  function clearAll(){
+    q.value='';term='';family='all';
+    document.querySelectorAll('.filters button').forEach(function(x){var on=x.getAttribute('data-f')==='all';x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});
+    render();q.focus();
+  }
+  river.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('clearall'))clearAll();});
+  /* A row of year links keeps a 51 card list short to move through. */
+  function yearJump(){
+    var nav=document.getElementById('yearjump');if(!nav)return;
+    var blocks=river.querySelectorAll('.yearblock');
+    nav.hidden=!blocks.length;
+    var h='';
+    blocks.forEach(function(b){var y=b.querySelector('.year').textContent;b.id='y'+y;h+='<a href="#y'+y+'">'+y+'</a>';});
+    nav.innerHTML=h;
+  }
   function render(){
     if(!data)return;
     var list=data.drops.filter(function(d){
@@ -65,7 +83,7 @@
     });
     var cl=document.getElementById('count-line');
     if(!list.length){
-      river.innerHTML='<p class="empty" role="status">Nothing matches that. Try a shorter word.</p>';
+      river.innerHTML=emptyMsg(family!=='all',term);
       cl.textContent='Showing 0 of '+data.meta.catalogued+' releases.';
       river.scrollIntoView({block:'nearest'});
       return;
@@ -81,7 +99,9 @@
     river.innerHTML=html;
     cl.textContent=
       'Showing '+list.length+' of '+data.meta.catalogued+' releases.';
+    yearJump();
   }
+  yearJump();
   fetch('data/v1/drops.json').then(function(r){return r.json();}).then(function(j){
     data=j;data.drops.sort(function(a,b){return a.sort-b.sort;});
     featured();
@@ -90,8 +110,8 @@
   q.addEventListener('input',function(){term=q.value.trim().toLowerCase();render();});
   document.querySelectorAll('.filters button').forEach(function(b){
     b.addEventListener('click',function(){
-      document.querySelectorAll('.filters button').forEach(function(x){x.classList.remove('on');});
-      b.classList.add('on');family=b.getAttribute('data-f');render();
+      document.querySelectorAll('.filters button').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed','false');});
+      b.classList.add('on');b.setAttribute('aria-pressed','true');family=b.getAttribute('data-f');render();
     });
   });
 })();

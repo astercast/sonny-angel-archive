@@ -24,11 +24,25 @@ a restock watchlist of stores verified firsthand.
   plus a checked and not listed section) and
   `data/v1/history.json` (129 series lines, 2004 to today,
   the Full Timeline's data, with a source named per entry)
+  Also `data/v1/stock.json` and `data/v1/candidates.json`
+  plus `data/v1/pulse.json`, written by the heartbeat
+  (`scripts/heartbeat/stock.py`, every 6 hours in CI): the
+  official USA store's public product list, matched to the
+  drops by name, keeping only title, link, type, date and
+  in-stock, never a price; store series the archive does
+  not list yet go to candidates.json for a human to check.
+  A guard step fails the run if the text price appears in
+  any public data file.
 - Pages: `index.html` (the river, search, family filters),
   `timeline.html` (Full Timeline, the deep history; opens on
   the years before 2019, the part the river does not cover
-  in full), `guide.html` (Real or Fake), `watchlist.html`,
-  `404.html`
+  in full), `guide.html` (Real or Fake), `sheet.html`
+  (My sticker sheet: all 51 series as stickers, collection
+  saved on the visitor's device only, share link carried in
+  the URL fragment), `watchlist.html`, `404.html`. Every
+  page carries the pulse kit (assets/pulse.js and
+  pulse.css); the build stamps `<meta name="built">` into
+  the assembled site/ copies for its updated-ago bar.
 - Publishing: `scripts/build.py` also assembles `site/`
   (only the pages, `assets/` and `data/v1/`; gitignored).
   `vercel.json` runs that build and serves `site/` as its
